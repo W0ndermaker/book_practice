@@ -1,10 +1,5 @@
 package main
 
-import (
-	"bytes"
-	"fmt"
-)
-
 // Типы данных:
 // 1) Фундоментальные - числа, строки и булевы значения
 // 2) Составные - массивы и структуры
@@ -67,32 +62,65 @@ func main() {
 	// fmt.Println(comma("102205468498479498498490"))
 	// fmt.Println(comma("100000"))
 
-	fmt.Println(comma("1022"))
-	fmt.Println(comma("102.2"))
-	fmt.Println(comma("1.022"))
-	fmt.Println(comma("10.22"))
-	fmt.Println(comma("100000"))
-}
+	// fmt.Println(comma("1022"))
+	// fmt.Println(comma("102.2"))
+	// fmt.Println(comma("1.022"))
+	// fmt.Println(comma("10.22"))
+	// fmt.Println(comma("100000"))
 
-// 3.11
-func comma(s string) string {
-	n := len(s)
-	if n <= 3 {
-		return s
-	}
+	// 3.5.5 преобразование между строками и числами
+	// x := 123
+	// y := fmt.Sprintf("%d", x)
+	// fmt.Println(y, strconv.Itoa(x))
 
-	var buf bytes.Buffer
-	first := n % 3
-	if first == 0 {
-		first = 3
-	}
-	buf.WriteString(s[:first])
-	for i := first; i < n; i += 3 {
-		buf.WriteByte(',')
-		buf.WriteString(s[i : i+3])
-	}
+	// fmt.Println(y, strconv.FormatInt(int64(x), 2))
+	// s := fmt.Sprintf("x = %b", x)
+	// fmt.Println(s)
 
-	return buf.String()
+	// a, _ := strconv.Atoi("123")
+	// b, _ := strconv.ParseInt("123", 10, 64)
+	// fmt.Println(a, b)
+
+	// Константы
+
+	// const (
+	// 	a = 1
+	// 	b
+	// 	c = 2
+	// 	d
+	// )
+
+	// fmt.Println(a, b, c, d)
+
+	// Генератор констант
+	// type Weekday int
+	// const (
+	// 	Sunday Weekday = iota + 1
+	// 	Monday
+	// 	Tuesday
+	// 	Wednesday
+	// 	Friday
+	// 	Saturday
+	// )
+	// fmt.Println(Friday)
+
+	// const (
+	// 	_ = 1 << (10 * iota)
+	// 	kb
+	// 	mb
+	// 	gb
+	// 	tb
+	// 	pb
+	// 	eb
+	// 	zb
+	// 	yb
+	// )
+
+	// fmt.Println(tb)
+	// fmt.Println(pb)
+	// fmt.Println(eb)
+	// fmt.Println(zb)
+
 }
 
 // 3.10
